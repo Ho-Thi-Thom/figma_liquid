@@ -134,8 +134,10 @@
   font-weight: 400;
   font-size: 14px;
   color: black;
-  line-height: 21px;
-  flex-wrap: nowrap;
+  --line: 2; /* .truncate-multiline global*/
+  --line-height: 21px;
+  line-height: var(--line-height);
+  height: calc(var(--line) * var(--line-height));
 }
 
 .arrival-list__item-info-money {

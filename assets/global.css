@@ -1,8 +1,3 @@
-@media (min-width: 1000px) {
-  .container {
-    max-width: 1410px;
-  }
-}
 .tns-nav {
   display: flex;
   justify-content: center;
@@ -40,23 +35,6 @@ button {
   cursor: pointer;
 }
 
-.scroll-snap-x::-webkit-scrollbar {
-  display: none;
-}
-
-.scroll-snap-x {
-  flex-wrap: nowrap;
-  overflow: auto;
-  scroll-snap-type: x proximity;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.scroll-snap-x-item {
-  flex-shrink: 0;
-  scroll-snap-align: start;
-}
-
 .body-overlay {
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
@@ -66,4 +44,42 @@ button {
   height: 100%;
   z-index: 1000;
   transition: opacity 0.3s ease-in-out;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate-multiline {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line);
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    max-width: 1410px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-snap-x::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-snap-x {
+    flex-wrap: nowrap;
+    overflow: auto;
+    scroll-snap-type: x proximity;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scroll-snap-x-item {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
 }
